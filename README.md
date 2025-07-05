@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# 🚀 Meta Front-End Developer Capstone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is the final capstone for the [Meta Front-End Developer Professional Certificate](https://www.coursera.org/professional-certificates/meta-front-end-developer).
 
-## Available Scripts
+👤 **Created by Cedrus Dang**
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📝 Project Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application demonstrates advanced React development skills, including:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* 🧩 Component-based architecture
+* ⚡ State management
+* 📱 Responsive design
+* ♿ Accessibility
+* 💡 Modern front-end best practices
 
-### `npm test`
+The codebase is structured for scalability and maintainability, meeting professional standards for real-world front-end applications.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🎨 UX/UI Design Compliance
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project strictly follows **Meta Front-End Developer Professional Certificate UX/UI Design 1 & 2** principles.
+All components, grid, layout, and visual details are implemented according to the official Meta Figma design for the capstone.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 📐 **Figma design reference:**
+  Both the initial wireframe and the final high-fidelity UI (see below) were used as design sources.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* 🗂️ **Design files included:**
+  `Design.png` and `Design2.png` are provided in the root project directory, alongside this README.
 
-### `npm run eject`
+**Wireframe and Final Design Reference:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="Design.png" alt="Wireframe and grid" width="600"/>  
+<br>  
+<img src="Design2.png" alt="Final UI Design" width="600"/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All code and layout are built according to these Figma designs to ensure professional UI/UX as per Meta guidelines.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Available Scripts
 
-## Learn More
+In the project directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* `npm start`
+  ▶️ Start the app in development mode. Open [http://localhost:3000](http://localhost:3000) in your browser.
+  The page automatically reloads on code changes.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `npm test`
+  🧪 Launch the test runner in interactive watch mode.
 
-### Code Splitting
+* `npm run build`
+  🏗️ Build the app for production to the `build` folder, with optimized assets and hashed filenames.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* `npm run eject`
+  ⚠️ **Irreversible.** Copies all build configuration files and dependencies into your project, giving full control over setup. Not recommended unless required.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🚀 Deployment
 
-### Making a Progressive Web App
+For deployment guidelines, refer to [Create React App deployment documentation](https://facebook.github.io/create-react-app/docs/deployment).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 📚 Additional Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* [React Documentation](https://reactjs.org/)
+* [Meta Front-End Professional Certificate Program](https://www.coursera.org/professional-certificates/meta-front-end-developer)
+* [Create React App Docs](https://facebook.github.io/create-react-app/docs/getting-started)
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+✨ **This project follows Meta Front-End Developer Capstone best practices for UI/UX, code quality, and deployment readiness.**
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Author:** Cedrus Dang
