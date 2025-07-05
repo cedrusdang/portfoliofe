@@ -1,0 +1,127 @@
+
+
+
+.Banner-Background {
+  position: relative;
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  background: linear-gradient(to bottom, #495E57 70%, #ffffff 30%);
+  opacity: 1;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 23rem;
+  width: 100%;
+}
+.Banner {
+  max-width: 1024px;
+  position: relative;
+  grid-row: 2 / 3;
+  grid-column: 3 / -3;
+  background: #ffffff00;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 23rem;
+  width: 100%;
+}
+.Banner-content {
+  grid-column: 1 / 10;
+  z-index: 1;
+  text-align: left;
+  margin-top: 1.8rem;
+  width: 15rem;
+}
+.Banner-title {
+  font-size: 54px;
+  color: #f4ce14;
+  font-weight: 500;
+  margin: 0;
+  opacity: 0.8;
+  font-family: 'Markazi Text', sans-serif;
+  line-height: 0.55;
+}
+.Banner-location {
+  font-size: 32px;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+  font-family: 'Markazi Text', sans-serif;
+}
+.Banner-description {
+  font-size: 20px;
+  color: white;
+  margin: 0.3rem 1rem 0 0;
+  font-family: 'Markazi Text', sans-serif;
+}
+.Reserve-button{
+    background-color: #f4ce14;
+    font-size: 16px;
+    font-family: 'Markazi Text', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 14px;
+    padding: 0.5rem 1.4rem;
+    cursor: pointer;
+    margin-top: 0.2rem;
+    transition: background 0.15s, transform 0.08s;
+}
+.Reserve-button:hover {
+    background-color: #d0ab25;
+}
+.Reserve-button:active {
+    background-color: #b89a1a;
+    transform: scale(0.96);
+}
+
+.Banner-image {
+  grid-column: 10 / -1;
+  margin-top: 1rem;
+  width: 15rem;
+  border-radius: 18px;
+  height: 20rem;
+  justify-self: end;
+}
+@media screen and (max-width: 770px) {
+  .Banner{
+    grid-column: 1 / -1;
+  }
+  .Banner-content{
+    padding-left: 0;
+    z-index: 1;
+    text-align: left;
+    margin-left: 2rem;
+  }
+  .Banner-image {
+    grid-column: 10 / -1;
+    margin-top: 1rem;
+    width: 13rem;
+    border-radius: 18px;
+    height: 18rem;
+    justify-self: end;
+    margin-right: 3rem;
+    margin-left: 3rem;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .Banner-Background{
+    grid-column: 1 / -1;
+    height: 28rem;
+  }
+  .Banner{
+    grid-column: 1 / -1;
+    display: flex;
+    height: 30rem;
+  }
+  .Banner-content{
+    width: 12rem;
+    margin-left: 0.8rem;
+  }
+  .Banner-image{
+    width: 33vw;
+    height: 40vw;
+    margin: 2rem 0.8rem 0 0;
+    justify-self: end;
+  }
+}

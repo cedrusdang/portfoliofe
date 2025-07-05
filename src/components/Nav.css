@@ -1,0 +1,122 @@
+
+.App-header {
+  max-width: 1024px;
+  grid-column: 3 / -3;
+  color: black;
+  font-family: 'Karla', sans-serif;
+  font-weight: bolder;
+  display: flex;
+  margin: 1rem 0 1rem 0;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.App-logo {
+  width: 10rem;
+  height: auto;
+  margin: 0;
+}
+
+.App-menu {
+  display: flex;
+  align-items: center;  
+  list-style-type: none;
+  margin: 0 1rem;
+}
+
+.App-header nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0 0 2rem;
+}
+
+.App-header nav li {
+  margin: 0 0.5rem;
+  white-space: nowrap;
+}
+@media screen and (max-width: 1023px) {
+    .App-header {
+    grid-row: 1 / 2;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
+}
+@media screen and (max-width: 770px) {
+  .App-header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
+  .App-logo {
+  width: 10rem;
+  height: auto;
+  }
+  .App-header nav {
+    display: grid;
+    list-style-type: none;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+    text-align: center;
+    font-size: 14px;
+  }
+  .App-header nav li {
+    white-space: nowrap;
+    margin-top: 0.5rem;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .App-header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
+  .App-logo {
+    width: 10rem;
+    height: auto;
+  }
+  .App-menu{
+    margin-right: 0;
+  }
+  .App-header nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+  }
+  .App-header nav li {
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .App-header nav {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen {
+  .App-header nav {
+    margin-left: auto;
+    margin-right: right;
+  }
+  .App-header nav li:hover {
+    color: #f4ce14;
+    cursor: pointer;
+  }
+}

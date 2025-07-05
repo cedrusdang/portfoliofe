@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&display=swap');
+
+.special {
+    grid-row: 3 / 4;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: #ffffff;
+    padding: 1rem 0;
+}
+.special > .header {
+    grid-column: 3 / -3;
+    max-width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 500;
+    color: black;
+    font-family: 'Markazi Text', sans-serif;
+}
+
+.content {
+    grid-column: 3 / -3;
+    max-width: 1024px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.card {
+    width: 18rem;
+    background-color: #edefee;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    margin: 0;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+    font-family: 'Markazi Text', sans-serif;
+    margin: 0rem;
+}
+
+.card-description {
+    color: #495e57;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    font-family: 'Karla', sans-serif;
+}
+
+.card-price {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #ee9972;
+    font-family: 'Karla', sans-serif;
+    margin: 0rem;
+    justify-content: flex-end;
+}
+
+.reserve-button:hover {
+    background-color: #d0ab25;
+}
+.reserve-button:active {
+    background-color: #b89a1a;
+    transform: scale(0.96);
+}
+
+.menu {
+    background-color: #f4ce14;
+    color: black;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.08s;
+}
+
+.menu:hover {
+    background-color: #ffe066;
+    transform: translateY(-2px);
+}
+
+.menu:active {
+    background-color: #e6b800;
+    transform: scale(0.96);
+}
+
+.order-button {
+    background: none;
+    color: black;
+    border: none;
+    padding: 0.8rem 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Karla', sans-serif;
+    transition: color 0.3s, text-decoration 0.15s, transform 0.08s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: none;
+}
+
+.order-button:hover {
+    color: #3a4a45;
+    text-decoration: wavy;
+    transform: translateY(-2px);
+}
+
+.order-button:active {
+    color: #222;
+    transform: scale(0.96);
+}
+
+.order-button::after {
+    content: none;
+}
+
+@media (max-width: 768px) {
+    .special {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .special > .header,
+    .content {
+        grid-column: 1 / -1;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        margin: 1rem;
+    }
+    .content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .card {
+        width: 100%;
+        max-width: 100%;
+    }
+}
