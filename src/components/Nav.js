@@ -9,7 +9,7 @@ export default function navigator(){
                 <li><a className="option" href="/">Home</a></li>
                 <li><a className="option" href="/about">About</a></li>
                 <li><a className="option" href="/menu">Menu</a></li>
-                <li><a className="option" href="/reservations">Reservations</a></li>
+                <li><a className="option" href="/BookingPage">Reservations</a></li>
                 <li><a className="option" href="/orderonline">Order Online</a></li>
                 <li><a className="option" href="/login">Login</a></li>
             </ul>
