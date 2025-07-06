@@ -33,8 +33,8 @@ All components, grid, layout, and visual details are implemented according to th
 
 **Wireframe and Final Design Reference:**
 
-<img src="Design.png" alt="Wireframe and grid" width="600"/>  
-<br>  
+<img src="Design.png" alt="Wireframe and grid" width="600"/>
+<br>
 <img src="Design2.png" alt="Final UI Design" width="600"/>
 
 All code and layout are built according to these Figma designs to ensure professional UI/UX as per Meta guidelines.
