@@ -1,6 +1,6 @@
-import "./Header.css"
+import "./Banner.css"
 
-export default function Header() {
+export default function Banner() {
     return(
         <div className='Banner-Background'>
             <div className='Banner'>

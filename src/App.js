@@ -1,14 +1,16 @@
 import './App.css';
 import Navigator from './components/Nav.js';
-import Header from './components/Header.js';
-import Special from './components/Special.js';
+import Home from './views/Home.js';
 
 function App() {
   return (
     <div className="App">
+      <div className="App-navigator-block">
         <Navigator />
-        <Header />
-        <Special />
+      </div>
+      <div className="App-content-block">
+        <Home />
+      </div>
     </div>
   );
 }
