@@ -6,12 +6,12 @@ export default function navigator(){
             <img src='/imgs/Logo.svg' className="App-logo" alt="logo" />
             <nav className='App-menu'>
             <ul>
-                <li src="/views/home">Home</li>
-                <li src="/views/about">About</li>
-                <li src="/views/menu">Menu</li>
-                <li src="/views/reservations">Reservations</li>
-                <li src="/views/order-online">Order Online</li>
-                <li src="/views/login">Login</li>
+                <li><a className="option" href="/">Home</a></li>
+                <li><a className="option" href="/about">About</a></li>
+                <li><a className="option" href="/menu">Menu</a></li>
+                <li><a className="option" href="/reservations">Reservations</a></li>
+                <li><a className="option" href="/orderonline">Order Online</a></li>
+                <li><a className="option" href="/login">Login</a></li>
             </ul>
             </nav>
         </div>
