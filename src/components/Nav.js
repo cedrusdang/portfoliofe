@@ -1,4 +1,5 @@
 import './Nav.css';
+import { Link } from 'react-router-dom';
 
 export default function navigator(){
     return(
@@ -6,12 +7,12 @@ export default function navigator(){
             <img src='/imgs/Logo.svg' className="App-logo" alt="logo" />
             <nav className='App-menu'>
             <ul>
-                <li><a className="option" href="/">Home</a></li>
-                <li><a className="option" href="/about">About</a></li>
-                <li><a className="option" href="/menu">Menu</a></li>
-                <li><a className="option" href="/BookingPage">Reservations</a></li>
-                <li><a className="option" href="/orderonline">Order Online</a></li>
-                <li><a className="option" href="/login">Login</a></li>
+                <li><Link className="option" to="/">Home</Link></li>
+                <li><Link className="option" to="/about">About</Link></li>
+                <li><Link className="option" to="/menu">Menu</Link></li>
+                <li><Link className="option" to="/BookingPage">Reservations</Link></li>
+                <li><Link className="option" to="/orderonline">Order Online</Link></li>
+                <li><Link className="option" to="/login">Login</Link></li>
             </ul>
             </nav>
         </div>

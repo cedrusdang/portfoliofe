@@ -155,9 +155,10 @@
   }
   .Banner{
     height: 32rem;
+    
   }
   .Banner-content{
-    margin: 1rem 0.5rem;
+    margin: 1rem 1rem;
   }
   .Banner-title {
     font-size: 48px;
