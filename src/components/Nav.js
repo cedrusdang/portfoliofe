@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function navigator(){
     return(
         <div className="App-header">
-            <img src='/imgs/Logo.svg' className="App-logo" alt="logo" />
+            <img src='/imgs/Logo.svg' className="App-logo" alt="logo" loading="lazy" />
             <nav className='App-menu'>
             <ul>
                 <li><Link className="option" to="/">Home</Link></li>

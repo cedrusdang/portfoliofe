@@ -9,7 +9,7 @@ export default function Special() {
             </div>
             <div className="content">
                 <div className="card">
-                    <img src="./imgs/greek salad.jpg" alt="Greek Salad" className="card-image"/>
+                    <img src="./imgs/greek salad.jpg" alt="Greek Salad" className="card-image" loading="lazy"/>
                     <div className="card-header">
                         <div className="card-title">Greek Salad</div>
                         <div className="card-price">$12.99</div>
@@ -18,7 +18,7 @@ export default function Special() {
                     <button className="order-button">Order a delivery <img src="./imgs/motobike.png" alt="Arrow"/></button>
                 </div>
                 <div className="card">
-                    <img src="./imgs/bruchetta.svg" alt="Bruschetta" className="card-image"/>
+                    <img src="./imgs/bruchetta.svg" alt="Bruschetta" className="card-image" loading="lazy"/>
                     <div className="card-header">
                         <div className="card-title">Bruschetta</div>
                         <div className="card-price">$5.99</div>
@@ -27,7 +27,7 @@ export default function Special() {
                     <button className="order-button">Order a delivery <img src="./imgs/motobike.png" alt="Arrow"/></button>
                 </div>
                 <div className="card">
-                    <img src="./imgs/lemon dessert.jpg" alt="Lemon Dessert" className="card-image"/>
+                    <img src="./imgs/lemon dessert.jpg" alt="Lemon Dessert" className="card-image" loading="lazy"/>
                     <div className="card-header">
                         <div className="card-title">Lemon Dessert</div>
                         <div className="card-price">$5.00</div>

@@ -10,7 +10,7 @@ export default function Banner() {
                     <div className='Banner-description'>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</div>
                     <button className='Reserve-button'>Reserve a Table</button>
                 </div>
-                <img src='/imgs/restaurantfood.jpg' className='Banner-image' alt="Little Lemon"/>
+                <img src='/imgs/restaurantfood.jpg' className='Banner-image' alt="Little Lemon" loading="lazy"/>
             </div>
         </div>
     );

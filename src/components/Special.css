@@ -57,7 +57,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
     margin: 0;
     box-sizing: border-box;
     justify-content: space-between;
@@ -88,6 +88,7 @@
     line-height: 1.5;
     flex-grow: 1;
     font-family: 'Karla', sans-serif;
+    margin-bottom: 0.5rem;
 }
 
 .card-price {
@@ -133,7 +134,7 @@
     background: none;
     color: black;
     border: none;
-    padding: 0.8rem 1rem;
+    padding: 0rem 1rem;
     margin: 1rem;
     border-radius: 8px;
     cursor: pointer;
