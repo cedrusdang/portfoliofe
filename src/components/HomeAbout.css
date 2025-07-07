@@ -1,133 +1,94 @@
+.about-title {
+    grid-column: 3 / -3;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: #495e57;
+    font-family: 'Markazi Text', serif;
+}
+
 .home-about {
-    grid-column: 1 / -1;
+    grid-column: 3 / -3;
+    border-radius: 16px;
+    margin: 1rem 0;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem 1rem;
-    border-radius: 16px;
-    margin: 2rem 0;
-    gap: 2rem;
-    background: #fff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    max-width: 100vw;
-    box-sizing: border-box;
+    margin-top: 0;
+}
+
+.about-inline {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
 }
 
 .about-content {
-    flex: 1 1 320px;
-    min-width: 260px;
-    margin-right: 0;
-    margin-bottom: 2rem;
-    box-sizing: border-box;
-    text-align: center;
+    flex: 1;
+    text-align: left;
+    text-align: start;
+    margin-top: 0;
 }
 
 .about-content-title {
-    font-size: 2rem;
-    margin-bottom: 0.2rem;
+    font-size: 40px;
     color: #495e57;
-    font-weight: 600;
-    line-height: 1.1;
+    font-family: 'Markazi Text', serif;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
 }
 
 .about-content-title2 {
-    font-size: 1.3rem;
+    font-size: 30px;
     color: #f4ce14;
-    font-weight: 600;
+    font-family: 'Markazi Text', serif;
     margin-bottom: 1rem;
-    line-height: 1.2;
 }
 
 .about-content-desc {
     font-size: 1.1rem;
     color: #333;
+    font-family: 'Karla', sans-serif;
     line-height: 1.6;
+    display: flex;
+    gap: 2rem;
+    text-align: justify;
+    margin-right: 2rem;
 }
 
-.about-images-stacked {
-    position: relative;
-    width: 260px;
-    height: 200px;
+.about-images-inline {
+    margin-left: 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    min-width: 120px;
-    min-height: 100px;
 }
 
-.about-img1-stacked {
-    position: absolute;
-    left: 0;
-    top: 30px;
-    width: 120px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    z-index: 1;
-    background: #eee;
+.about-img1-inline {
+    height: auto !important;
+    width: 35vw;
+    max-width: 30rem;
+    image-resolution: auto;
 }
 
-.about-img2-stacked {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    background: #eee;
-}
-
-.about-owner-top {
-    left: 80px;
-    top: 0;
-    z-index: 2;
-}
-
-.about-owner-bottom {
-    left: 120px;
-    top: 60px;
-    z-index: 3;
-}
-
-@media (max-width: 800px) {
-    .home-about {
+@media (max-width: 900px) {
+    .about-inline {
         flex-direction: column;
-        padding: 1.5rem 0.5rem;
-        gap: 1.5rem;
+        align-items: center;
+    }
+    .about-images-inline {
+        margin-left: 0;
+        width: 70vw;
     }
     .about-content {
-        margin-right: 0;
-        margin-bottom: 1.5rem;
         text-align: center;
-    }
-    .about-images-stacked {
-        width: 200px;
-        height: 150px;
-    }
-    .about-img1-stacked {
-        width: 90px;
-        height: 110px;
-        top: 20px;
-    }
-    .about-img2-stacked {
-        width: 70px;
-        height: 70px;
-    }
-    .about-owner-top {
-        left: 60px;
-        top: 0;
-    }
-    .about-owner-bottom {
-        left: 90px;
-        top: 40px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
     .home-about {
-        gap: 1rem;
+        padding: 1rem 0.2rem;
+        grid-column: 2 / -2;
     }
     .about-content-title {
         font-size: 1.3rem;
@@ -138,25 +99,7 @@
     .about-content-desc {
         font-size: 0.95rem;
     }
-    .about-images-stacked {
-        width: 120px;
+    .about-img1-inline {
         height: 90px;
-    }
-    .about-img1-stacked {
-        width: 50vw;
-        height: 60vw;
-        top: 10px;
-    }
-    .about-img2-stacked {
-        width: 50vw;
-        height: 60vw;
-    }
-    .about-owner-top {
-        left: 35px;
-        top: 0;
-    }
-    .about-owner-bottom {
-        left: 60px;
-        top: 20px;
     }
 }

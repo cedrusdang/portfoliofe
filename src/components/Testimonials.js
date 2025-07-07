@@ -29,6 +29,14 @@ export default function Testimonials() {
                         "Absolutely loved it! Friendly staff and delicious food. Will definitely come back."
                     </div>
                 </div>
+                <div className="testimonial-card">
+                    <img src="/imgs/customerD.png" alt="Customer 4" className="testimonial-avatar" />
+                    <div className="testimonial-name">Michael S.</div>
+                    <div className="testimonial-role">Diner</div>
+                    <div className="testimonial-text">
+                        "Great place for family dinners. The menu has something for everyone and the staff is very accommodating."
+                    </div>
+                </div>
             </div>
         </section>
     );

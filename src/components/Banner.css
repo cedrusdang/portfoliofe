@@ -101,26 +101,26 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .Banner-Background{
-    height: 26rem;
+    height: 22rem;
   }
   .Banner{
-    height: 26rem;
+    height: 22rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
   }
   .Banner-content{
     flex: 1;
-    margin: 2rem 1rem;
+    margin: 2rem 2rem;
     max-width: 60%;
   }
   .Banner-image {
     flex: 0 0 40%;
-    width: 11rem;
-    height: 14rem;
-    margin: 2rem 1rem 2rem 0;
+    width: 8em;
+    height: 20rem;
+    margin: 2rem 2rem 2rem 0;
     align-self: flex-start;
   }
 }

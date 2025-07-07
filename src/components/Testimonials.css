@@ -2,41 +2,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&display=swap');
 
 .testimonials-container {
-    margin: 0 auto;
     border-radius: 16px;
     grid-column: 3 / -3;
-    padding: 2rem;
-    display: flex;
     flex-direction: column;
     align-items: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
 }
 
 .testimonials-title {
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin: 1.5rem;
     color: #495e57;
     font-family: 'Markazi Text', serif;
 }
 
 .testimonials-list {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    flex-wrap: wrap;
+    display: grid;
+    grid-column: 3 / -3;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    align-self: center !important;
+    margin-bottom: 2rem;
+    max-width: 1024px !important;
 }
 
 .testimonial-card {
     background: #edefee;
     border-radius: 16px;
-    padding: 1.5rem 1rem;
-    max-width: 220px;
-    width: 100%;
+    padding: 1rem;
+    width: 25vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 220px;
     box-shadow: 0 4px 16px rgba(60, 72, 88, 0.10), 0 1.5px 4px rgba(60, 72, 88, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
     border: 1px solid #ececec;
@@ -48,8 +49,10 @@
 }
 
 .testimonial-avatar {
-    width: 100px;
-    height: 100px;
+    width: 8vw;
+    max-width: 7rem;
+    height: 8vw;
+    max-height: 7rem;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 0.7rem;
@@ -78,19 +81,6 @@
     line-height: 1.5;
     text-align: center;
     font-family: 'Karla', sans-serif;
-}
-
-@media (max-width: 1100px) {
-    .testimonials-list {
-        gap: 1.5rem;
-    }
-}
-
-@media (max-width: 700px) {
-    .testimonials-container {
-        grid-column: 1 / -1;
-        padding: 1rem;
-    }
 }
 
 .special {
@@ -247,59 +237,52 @@
     content: none;
 }
 
-@media (max-width: 1024px) {
-    .special > .header,
-    .content {
+@media(min-width: 1442px) {
+    .testimonial-card {
+        width: 10rem !important;
+    }
+}
+@media (max-width: 1441px) {
+    .testimonial-card {
+        width: 11vw !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .testimonials-container {
         grid-column: 2 / -2;
-        max-width: 100%;
     }
-}
-
-@media (max-width: 768px) {
-    .special {
-        grid-template-columns: 1fr;
-        padding: 0;
-    }
-    .special > .header,
-    .content {
-        grid-column: 1 / -1;
-        max-width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        margin: 1rem 0.5rem;
-    }
-    .content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    .card {
+    .testimonials-list {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 0rem;
         width: 100%;
-        max-width: 100%;
+        margin: 2rem 0 0 0;
+        justify-items: center;
     }
-    .card-image {
-        height: 9rem;
+    .testimonial-card {
+        display: flex;
+        align-items: center;
+        width: 15vw !important;
+        margin: 0;;
+        gap: 0rem !important;
     }
 }
 
-@media (max-width: 500px) {
-    .special {
-        padding: 0.5rem 0 0.5rem 0;
+@media (max-width: 800px) {
+    .testimonials-container {
+        grid-column: 1 / -1;
+        padding: 1rem;
     }
-    .special > .header {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 0.5rem;
+    .testimonials-list {
+        grid-template-columns: repeat(1, 1fr) !important;
     }
-    .title {
-        font-size: 2rem;
-    }
-    .content {
-        gap: 1rem;
-    }
-    .card {
-        padding: 1rem 0.5rem;
-    }
-    .card-image {
-        height: 6rem;
+    .testimonial-card {
+        margin: 1rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75vw !important;
     }
 }
