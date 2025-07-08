@@ -38,6 +38,10 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "jest": "^27.5.1"
-  }
+  },
+  "homepage": "https://cedrusdang.github.io/portfoliofe",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
 }

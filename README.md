@@ -20,6 +20,20 @@ The codebase is structured for scalability and maintainability, meeting professi
 
 ---
 
+## ✨ Features
+
+* **Online Table Booking**: Users can reserve tables by filling out a form with real-time validation for required fields, date, time, and party size. Confirmation and error messages provide clear feedback.
+* **Admin Page for Reservations**: Admins can view, manage, and update all reservations. Includes search/filter functionality and simulated data updates for demo/testing.
+* **Responsive Design**: The UI adapts seamlessly to mobile, tablet, and desktop screens, ensuring a consistent experience across devices.
+* **Accessibility**: Implements ARIA roles, keyboard navigation, and color contrast standards for an inclusive user experience.
+* **Modular, Reusable Components**: All UI elements (forms, banners, cards, etc.) are built as independent, reusable React components for easy maintenance and scalability.
+* **Modern Theming & UI**: Uses a modern design system based on Figma specs, with support for theming and visually appealing layouts.
+* **Customer Testimonials & Dish Showcase**: Displays rotating customer reviews and a gallery of featured dishes, enhancing credibility and engagement.
+* **Testing**: Includes unit and integration tests for core components and booking logic, using Jest and React Testing Library.
+* **Local Client Server for Simulated Testing**: The app runs on a local development server (`npm start`) with mock data and simulated API calls, allowing you to test all features without a real backend. Booking and admin actions are reflected in the UI and local state for demonstration purposes.
+
+---
+
 ## 🎨 UX/UI Design Compliance
 
 This project strictly follows **Meta Front-End Developer Professional Certificate UX/UI Design 1 & 2** principles.
