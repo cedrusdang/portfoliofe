@@ -1,0 +1,89 @@
+/* LoginForm.css */
+
+.login-form-container {
+    max-width: 350px;
+    margin: 60px auto;
+    padding: 32px 28px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-form-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #22223b;
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.login-form-label {
+    font-size: 1rem;
+    color: #4a4e69;
+    margin-bottom: 6px;
+}
+
+.login-form-input {
+    width: 90%;
+    padding: 10px 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #c9ada7;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    transition: border 0.2s;
+}
+
+.login-form-input:focus {
+    border: 1.5px solid #9a8c98;
+    outline: none;
+    background: #fff;
+}
+
+.login-form-button {
+    width: 80%;
+    padding: 12px 0;
+    background: linear-gradient(90deg, #9a8c98 0%, #4a4e69 100%);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px auto 0 auto;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-button:hover {
+    background: linear-gradient(90deg, #4a4e69 0%, #9a8c98 100%);
+}
+
+.login-form-error {
+    color: #c9184a;
+    background: #fff0f3;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.login-form-link {
+    color: #4a4e69;
+    text-decoration: underline;
+    font-size: 0.95rem;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    transition: color 0.2s;
+}
+
+.login-form-link:hover {
+    color: #9a8c98;
+}

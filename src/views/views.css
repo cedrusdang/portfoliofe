@@ -22,3 +22,18 @@
   gap: 2rem;
   margin-top: 2rem;
 }
+
+.App-login-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.App-login-block h1 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+.App-login-block p {
+  margin: 0.5rem;
+}

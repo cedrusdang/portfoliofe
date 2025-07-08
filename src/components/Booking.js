@@ -6,7 +6,7 @@ import { Server, GetReservations } from '../testing/ServerTest';
 
 // REMOVE THIS IMPORT WHEN NOT TESTING
 
-function AvailableTable({ date, tableUpdate }) {
+function AvailableTable({ date, tocompletepage }) {
     const times = [
         "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
         "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
@@ -36,7 +36,7 @@ function AvailableTable({ date, tableUpdate }) {
             }
         }
         fetchBookedTimes();
-    }, [date, tableUpdate]);
+    }, [date, tocompletepage]);
     // REMOVE THIS USEEFFECT WHEN NOT TESTING
 
     const mid = Math.ceil(times.length / 2);
@@ -82,12 +82,11 @@ function AvailableTable({ date, tableUpdate }) {
 
 // This component allows users to make a reservation by selecting a date, time, number of guests, and occasion.
 function Booking() {
-    const [tableUpdate, setTableUpdate] = useState(false);
+    const [tocompletepage, setToCompletePage] = useState(false);
     const [time, setTime] = useState("17:00");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
     const [message, setMessage] = useState(null);
-    const [messageColor, setMessageColor] = useState("");
     const [formData, setFormData] = useState({
         date: "",
         time: "",
@@ -151,32 +150,20 @@ function Booking() {
         let response = await Server(data);
         if (response.status === 200) {
             console.log("Reservation made successfully!");
-            setMessage(
-                `Reservation made successfully!
-
-                Booking Information
-                ID: ${response.data.id}
-
-                Date: ${response.data.date}
-                Time: ${response.data.time}
-                Guests: ${response.data.guests}
-                Occasion: ${response.data.occasion}
-                `
-            );
-            setMessageColor("green");
-            setTableUpdate(false);// Reset table update state
+            setMessage(null);
+            setToCompletePage(true);// Reset table update state
         } else if (response.status === 409) {
             setMessage("This slot is already booked.");
             console.error(response.message);
-            setMessageColor("red");
+            setToCompletePage(null);
         } else if (response.status === 400) {
             setMessage("Invalid request. Please fill all fields.");
             console.error(response.message);
-            setMessageColor("red");
+            setToCompletePage(null);
         } else {
             setMessage("Unknown error. Please try again.");
             console.error(response.message);
-            setMessageColor("red");
+            setToCompletePage(null);
         }
         response = null; // Clear response to free memory
     };
@@ -200,30 +187,23 @@ function Booking() {
                 setDate(new Date().toISOString().split("T")[0]);
                 setTime(new Date().toISOString().split("T")[1].substring(0, 5));
                 setGuests(1);
-                setOccasion("");
-                setMessage("Reservation made successfully!");
-                setMessageColor("green");
+                setOccasion("Birthday");
             } else {
                 console.error("Error making reservation:", response.statusText);
                 setMessage("Error making reservation. Please try again.");
-                setMessageColor("red");
             }
         } catch (error) {
             console.error("Network or server error:", error);
             setMessage("Network or server error. Please try again.");
-            setMessageColor("red");
         }
     };
     // Handle form submission
     const handleSubmit = (e) => {
-        // reset the table update state
-        setTableUpdate(true);
         // Prevent the default form submission behavior
         e.preventDefault();
         if (checkDate(date)) {
             console.log("You cannot book a reservation in the past.");
             setErrorDate(true);
-            setMessage(null);
             return "You cannot book a reservation in the past.";
         } else {
             setErrorDate(false);
@@ -231,7 +211,6 @@ function Booking() {
         if (checkTime(date, time)) {
             console.log("You cannot book a reservation in the past.");
             setErrorTime(true);
-            setMessage(null);
             return "You cannot book a reservation in the past.";
         } else {
             setErrorTime(false);
@@ -249,51 +228,96 @@ function Booking() {
 
     return (
         <div>
-            <AvailableTable date={date} tableUpdate={tableUpdate} />
-            <div className="booking-page">
-                <div className="booking-form-container">
-                    <form className="booking-form" style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
-                        <label htmlFor="res-date">Choose date</label>
-                        <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} />
-                        <label htmlFor="res-time">Choose time</label>
-                        <select id="res-time" value={time} onChange={e => setTime(e.target.value)}>
-                            <option>10:00</option>
-                            <option>11:00</option>
-                            <option>12:00</option>
-                            <option>13:00</option>
-                            <option>14:00</option>
-                            <option>15:00</option>
-                            <option>16:00</option>
-                            <option>17:00</option>
-                            <option>18:00</option>
-                            <option>19:00</option>
-                            <option>20:00</option>
-                            <option>21:00</option>
-                            <option>22:00</option>
-                            <option>23:00</option>
-                        </select>
+            {!tocompletepage ? (
+                <>
+                    <AvailableTable date={date} tocompletepage={tocompletepage} />
+                    <div className="booking-page">
+                        <div className="booking-form-container">
+                            <form className="booking-form" style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+                                <label htmlFor="res-date">Choose date</label>
+                                <input
+                                    type="date"
+                                    id="res-date"
+                                    name="date"
+                                    value={date}
+                                    onChange={(e) => setDate(e.target.value)}
+                                />
 
-                        <label htmlFor="guests">Number of guests</label>
-                        <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} />
-                        <label htmlFor="occasion">Occasion</label>
-                        <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
-                            <option>Birthday</option>
-                            <option>Anniversary</option>
-                            <option>Wedding</option>
-                            <option>Graduation</option>
-                            <option>Other</option>
-                        </select>
-                        <input type="submit" value="Make Your reservation" onClick={handleSubmit} />
-                    </form>
+                                <label htmlFor="res-time">Choose time</label>
+                                <select
+                                    id="res-time"
+                                    name="time"
+                                    value={time}
+                                    onChange={e => setTime(e.target.value)}
+                                >
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="22:00">22:00</option>
+                                    <option value="23:00">23:00</option>
+                                </select>
+
+                                <label htmlFor="guests">Number of guests</label>
+                                <input
+                                    type="number"
+                                    placeholder="1"
+                                    min="1"
+                                    max="10"
+                                    id="guests"
+                                    name="guests"
+                                    value={guests}
+                                    onChange={(e) => setGuests(e.target.value)}
+                                />
+
+                                <label htmlFor="occasion">Occasion</label>
+                                <select
+                                    id="occasion"
+                                    name="occasion"
+                                    value={occasion}
+                                    onChange={(e) => setOccasion(e.target.value)}
+                                >
+                                    <option value="Birthday">Birthday</option>
+                                    <option value="Anniversary">Anniversary</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Graduation">Graduation</option>
+                                    <option value="Other">Other</option>
+                                </select>
+
+                                <input
+                                    type="submit"
+                                    id="submit"
+                                    name="submit"
+                                    value="Make Your reservation"
+                                    onClick={handleSubmit}
+                                />
+                            </form>
+                        </div>
+                        <div className="error-message-container">
+                            <span className="error-message">
+                                {errorDate ? <p>Please select a date that is in the future.</p> : ""}
+                                {errorTime ? <p>Please select a time that is in the future.</p> : ""}
+                                {message !== true ? <p style={{ color: "red", whiteSpace: "pre-line" }}>{message}</p> : ""}
+                            </span>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div className="booking-complete">
+                    <h2>Reservation Complete!</h2>
+                    <p>Your reservation for <strong>{guests}</strong> guests on <strong>{date}</strong> at <strong>{time}</strong> has been successfully made!</p>
+                    <p>Occasion: <strong>{occasion}</strong></p>
+                    <button type="button" onClick={() => setToCompletePage(false)}>Make Another Reservation</button>
                 </div>
-                <div className="error-message-container">
-                    <span className="error-message">
-                        {errorDate ? <p>Please select a date that is in the future.</p> : ""}
-                        {errorTime ? <p>Please select a time that is in the future.</p> : ""}
-                        {message !== null ? <p style={{ color: messageColor, whiteSpace: "pre-line" }}>{message}</p> : ""}
-                    </span>
-                </div>
-            </div>
+            )}
         </div>
     );
 }

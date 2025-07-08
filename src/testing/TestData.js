@@ -1,4 +1,4 @@
-export const database = [
+export const ReservationDB = [
     {
         id: 1,
         date: "2025-07-08",
@@ -45,13 +45,8 @@ export const database = [
 
 export const loginData = [
     {
-        id: 1,
-        username: "admin",
-        password: "admin"
-    },
-    {
-        id: 2,
-        username: "test",
-        password: "test"
+        id: "100",
+        username: "Admin@gmail.com",
+        password: "Admin@gmail.com"
     }
 ];
