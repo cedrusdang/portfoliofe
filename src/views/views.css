@@ -1,5 +1,5 @@
 .Content {
-    grid-column: 3 / -3;
+    grid-column: 3 / -3 !important;
 }
 
 .menu-grid {
@@ -9,13 +9,7 @@
   margin-top: 2rem;
 }
 
-@media (max-width: 900px) {
-  .menu-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .menu-grid {
     grid-template-columns: 1fr;
     gap: 2rem;

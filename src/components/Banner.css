@@ -4,11 +4,16 @@
   grid-column: 1 / -1;
   background: linear-gradient(to bottom, #495E57 70%, #ffffff 30%);
   opacity: 1;
-  text-align: center;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  display: flex;
   height: 23rem;
   width: 100%;
+}
+@media (max-width: 1441px) {
+  .Banner-Background {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
 }
 .Banner {
   max-width: 1024px;

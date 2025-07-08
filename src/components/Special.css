@@ -180,32 +180,3 @@
         margin-top: 1rem;
     }
 }
-
-@media (max-width: 500px) {
-    .special {
-        padding: 0.5rem 0 0.5rem 0;
-    }
-    .special > .header {
-        margin-bottom: 0.5rem;
-        align-items: center;
-        text-align: center;
-    }
-    .title {
-        font-size: 2rem;
-    }
-    .content {
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
-    }
-    .card {
-        padding: 1rem 0.5rem;
-        margin: 0 auto;
-        width: 95vw !important;
-        max-width: 350px;
-    }
-    .card-image {
-        height: 6rem;
-    }
-}
-

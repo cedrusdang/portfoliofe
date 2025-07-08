@@ -84,9 +84,9 @@ export default function Menu() {
 	}, []);
 
 	return (
-		<>
+		<div>
 			{loading && <Loading />}
-			<div className="Content" style={{ opacity: loading ? 0.5 : 1 }}>
+			<div className="Content-menu" style={{ opacity: loading ? 0.5 : 1 }}>
 				<h1>Menu</h1>
 				<p>Explore our delicious menu options!</p>
 				<div className="menu-grid">
@@ -111,6 +111,6 @@ export default function Menu() {
 					))}
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

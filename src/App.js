@@ -9,6 +9,7 @@ import Login from './views/Login.js';
 import Loading from './components/Loading.js';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import Footer from './components/Footer.js';
 
 function AppContent() {
   const location = useLocation();
@@ -25,7 +26,7 @@ function AppContent() {
       <div className="App-navigator-block">
         <Navigator />
       </div>
-      <div className="App-content-block" style={{ position: 'relative' }}>
+      <div className="App-main-block" style={{ position: 'relative' }}>
         {loading && (
           <div style={{ position: 'absolute', inset: 0, zIndex: 1000 }}>
             <Loading />
@@ -40,6 +41,7 @@ function AppContent() {
           <Route path="/login" element={<Login />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

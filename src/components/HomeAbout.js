@@ -2,7 +2,7 @@ import "./HomeAbout.css";
 
 export default function HomeAbout() {
     return (
-        <>
+        <div className="home-about-container">
             <div className="about-title">About Us</div>
             <section className="home-about">
                 <div className="about-inline">
@@ -16,11 +16,11 @@ export default function HomeAbout() {
                     <img
                         src="/imgs/stacked.png"
                         alt="Restaurant"
-                        className="about-img1-inline"
+                        className="about-img-inline"
                         loading="lazy"
                     />
                 </div>
             </section>
-        </>
+        </div>
     );
 }
