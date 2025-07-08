@@ -57,7 +57,7 @@
 }
 
 .footer-doormat a:hover {
-    color: yellow;
+    font-weight: bold;
 }
 
 .footer-contact p,

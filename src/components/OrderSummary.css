@@ -1,0 +1,117 @@
+.available-table-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fffbe7;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    width: 100%;
+}
+
+.table-title {
+    text-align: center;
+    color: #f4ce14;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.available-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.available-table th,
+.available-table td {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.available-table th {
+    background: #495E57;
+    color: #fff;
+}
+
+.available-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.total-row {
+    background: #f4ce14;
+    font-weight: bold;
+    color: #333;
+}
+
+.no-items-message {
+    text-align: center;
+    padding: 1.5rem;
+    color: #666;
+    font-style: italic;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.submit-section {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.submit-button {
+    background: #4f8cff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #3a7ae4;
+}
+
+.submit-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+    .available-table-container {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+    .table-title {
+        font-size: 1.1rem;
+    }
+    .available-table th,
+    .available-table td {
+        padding: 7px 4px;
+        font-size: 0.85rem;
+    }
+    .submit-button {
+        padding: 0.6rem 1rem;
+        font-size: 14px;
+    }
+}

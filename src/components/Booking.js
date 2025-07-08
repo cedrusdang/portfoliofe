@@ -74,8 +74,8 @@ function AvailableTable({ date, tocompletepage }) {
 
     return (
         <div className="available-tables">
-            {renderTable(firstHalf, "Morning Reservation")}
-            {renderTable(secondHalf, "Afternoon Reservation")}
+            {renderTable(firstHalf, "Morning")}
+            {renderTable(secondHalf, "Afternoon")}
         </div>
     );
 }
@@ -87,12 +87,6 @@ function Booking() {
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
     const [message, setMessage] = useState(null);
-    const [formData, setFormData] = useState({
-        date: "",
-        time: "",
-        guests: 1,
-        occasion: "",
-    });
     const [errorDate, setErrorDate] = useState(false);
     const [errorTime, setErrorTime] = useState(false);
 
@@ -130,11 +124,9 @@ function Booking() {
         if (checkDateTomorrow(date)) {
             return false;
         } else {
-            const TimeNow = new Date();
             const now = new Date();
             const hour = now.getHours().toString().padStart(2, '0');
             // Ensure hour is in 24-hour format
-            const minute = now.getMinutes().toString().padStart(2, '0');
             const hhmm = `${hour}:00`;
             // :00 for hour only comparison, change as needed
             console.log("Selected time:", selectedTime);
@@ -216,7 +208,6 @@ function Booking() {
             setErrorTime(false);
         }
         // Set the form data state with the reservation details
-        setFormData({ date, time, guests, occasion });
         console.log("Reservation made:", { date, time, guests, occasion });
         // Call the function to save the reservation data
         // ReserveTable({ date, time, guests, occasion }); Activate this line to use the actual API endpoint
@@ -233,7 +224,7 @@ function Booking() {
                     <AvailableTable date={date} tocompletepage={tocompletepage} />
                     <div className="booking-page">
                         <div className="booking-form-container">
-                            <form className="booking-form" style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
+                            <form className="booking-form">
                                 <label htmlFor="res-date">Choose date</label>
                                 <input
                                     type="date"

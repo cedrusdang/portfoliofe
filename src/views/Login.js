@@ -13,7 +13,8 @@ export default function Login() {
         <h1>Administration Login</h1>
         <p>Please enter your credentials to log in.</p>
         <p>If you are not an administrator, please contact your system administrator.</p>
-        <p>Note: This is a demo application. Please use 'Admin@gmail.com' for both username and password.</p>
+        <p>Note: This is a demo application. Please use <strong>'Admin@gmail.com'</strong> for both username and password.</p>
+        <p style={{color:'red'}}>For Mobile View, please turn to horizontal mode.</p>
         <LoginForm setOnLogin={setOnLogin} setLoginCredentials={setLoginCredentials} />
       </>}
       {onLogin &&

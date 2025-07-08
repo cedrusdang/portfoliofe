@@ -1,0 +1,160 @@
+/* Global box-sizing fix for layout skew */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent horizontal scroll */
+body {
+    overflow-x: hidden;
+}
+
+/* Container Styles */
+.payment-form-container,
+.customer-form-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    margin: auto;
+}
+
+.payment-form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Form Styles */
+.payment-form,
+.customer-form {
+    padding: 24px 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    border: 2px solid #eee;
+    background: #fff;
+    margin-top: 1rem;
+}
+
+.payment-form {
+    background: linear-gradient(135deg, #f4ce14 0%, #ffe066 100%);
+    border-color: #f4ce14;
+}
+
+.customer-form {
+    background: linear-gradient(135deg, #495E57 0%, #5a6b61 100%);
+    border-color: #3a4a45;
+    color: #fff;
+}
+
+/* Headings */
+.payment-form h2,
+.customer-form h2 {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* Labels & Inputs */
+.payment-form label,
+.customer-form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+    font-size: 14px;
+}
+
+.payment-form input,
+.customer-form input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.payment-form input.error,
+.customer-form input.error {
+    border: 2px solid #ff6b6b;
+}
+
+.payment-form input:focus,
+.customer-form input:focus {
+    outline: none;
+    border-color: #4f8cff;
+}
+
+/* Error Message */
+.payment-form .error-message,
+.customer-form .error-message {
+    color: #ff6b6b;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Grid Layout */
+.form-grid-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-field {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+    .payment-form-container,
+    .customer-form-container {
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+    .payment-form,
+    .customer-form {
+        padding: 20px 12px;
+    }
+    .form-grid-two {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .payment-form h2,
+    .customer-form h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .payment-form label,
+    .customer-form label,
+    .payment-form input,
+    .customer-form input {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+    .payment-form .error-message,
+    .customer-form .error-message {
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 600px) {
+    .payment-form,
+    .customer-form {
+        padding: 14px 6px;
+    }
+    .payment-form h2,
+    .customer-form h2 {
+        font-size: 1.1rem;
+    }
+}
