@@ -56,7 +56,7 @@ function AvailableTable({ date }) {
     );
 
     return (
-        <div className="available-tables">        
+        <div className="available-tables">
             {renderTable(firstHalf, "Morning Reservation")}
             {renderTable(secondHalf, "Afternoon Reservation")}
         </div>
@@ -82,16 +82,27 @@ function Booking() {
 
     // Check if the date is today or in the past
     const checkDate = (selectedDate) => {
-        const today = new Date().toISOString().split("T")[0];
+        // Get today's date in ISO format and remove the time part
+        const today = new Date();
+        today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+        const todayISO = today.toISOString().split("T")[0];
+        // console.log for debugging
+        console.log("Selected date:", selectedDate);
+        console.log("Today date:", todayISO);
+        // Compare selected date with today's date
         const selected = selectedDate;
-        return selected < today;
+        return selected < todayISO;
     };
     // Check if the time is in the past
     const checkTime = (date, selectedTime) => {
         const checkDateTomorrow = (selectedDate) => {
-            const today = new Date().toISOString().split("T")[0];
+            const today = new Date();
+            today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+            const todayISO = today.toISOString().split("T")[0];
             const selected = selectedDate;
-            return selected > today;
+            console.log("Selected date:", selectedDate);
+            console.log("Today date:", todayISO);
+            return selected > todayISO;
         };
         // If the date is tomorrow or later, no need to check time
         if (checkDateTomorrow(date)) {
@@ -104,6 +115,8 @@ function Booking() {
             const minute = now.getMinutes().toString().padStart(2, '0');
             const hhmm = `${hour}:00`;
             // :00 for hour only comparison, change as needed
+            console.log("Selected time:", selectedTime);
+            console.log("Current time:", hhmm);
             return selectedTime <= hhmm;
         }
     };
