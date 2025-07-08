@@ -6,61 +6,63 @@ import { Server } from '../testing/ServerTest';
 // REMOVE THIS IMPORT WHEN NOT TESTING
 
 function AvailableTable({ date }) {
-const times = [
-    "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
-    "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
-];
+    const times = [
+        "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
+        "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
+    ];
 
-const [bookedTimes, setBookedTimes] = useState([]);
+    const [bookedTimes, setBookedTimes] = useState([]);
 
-// Fetch booked times from the server based on the selected date
-//useEffect(() => {
-//    // Replace with your actual API endpoint
-//    fetch(`/api/reservations?date=${date}`)
-//        .then(res => res.json())
-//        .then(data => setBookedTimes(data.bookedTimes || []))
-//        .catch(() => setBookedTimes([]));
-//}, [date]);
+    // Fetch booked times from the server based on the selected date
+    //useEffect(() => {
+    //    // Replace with your actual API endpoint
+    //    fetch(`/api/reservations?date=${date}`)
+    //        .then(res => res.json())
+    //        .then(data => setBookedTimes(data.bookedTimes || []))
+    //        .catch(() => setBookedTimes([]));
+    //}, [date]);
 
-const mid = Math.ceil(times.length / 2);
-const firstHalf = times.slice(0, mid);
-const secondHalf = times.slice(mid);
+    const mid = Math.ceil(times.length / 2);
+    const firstHalf = times.slice(0, mid);
+    const secondHalf = times.slice(mid);
 
-const renderTable = (data, title) => (
-    <div className="available-table-container">
-        <h2 className="table-title">{title}</h2>
-        <table className="available-table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data.map((time, idx) => {
-                    const isBooked = bookedTimes.includes(time);
-                    return (
-                        <tr key={idx} className={idx % 2 === 0 ? "even-row" : "odd-row"}>
-                            <td>{time}</td>
-                            <td style={{ color: isBooked ? 'red' : 'green', fontWeight: 'bold' }}>
-                                {isBooked ? 'Booked' : 'Available'}
-                            </td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
-    </div>
-);
+    const renderTable = (data, title) => (
+        <div className="available-table-container">
+            <h2 className="table-title">{title}</h2>
+            <table className="available-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {data.map((time, idx) => {
+                        const isBooked = bookedTimes.includes(time);
+                        return (
+                            <tr key={idx} className={idx % 2 === 0 ? "even-row" : "odd-row"}>
+                                <td style={{ whiteSpace: "nowrap" }}>{date}</td>
+                                <td>{time}</td>
+                                <td style={{ color: isBooked ? 'red' : 'green', fontWeight: 'bold' }}>
+                                    {isBooked ? 'Booked' : 'Available'}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+        </div>
+    );
 
-return (
-    <div className="available-tables">        
-        {renderTable(firstHalf, "Morning Reservation")}
-        {renderTable(secondHalf, "Afternoon Reservation")}
-    </div>
+    return (
+        <div className="available-tables">        
+            {renderTable(firstHalf, "Morning Reservation")}
+            {renderTable(secondHalf, "Afternoon Reservation")}
+        </div>
     );
 }
-    
+
 // This component allows users to make a reservation by selecting a date, time, number of guests, and occasion.
 function Booking() {
     const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
