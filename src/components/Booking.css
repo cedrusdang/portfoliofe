@@ -1,0 +1,141 @@
+.booking-page {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    gap: 0;
+}
+.booking-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.booking-form {
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    display: grid;
+    max-width: 320px;
+    width: 100%;
+}
+.booking-form label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+.booking-form input[type="date"],
+.booking-form input[type="number"],
+.booking-form select {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 15px;
+    background: #f6f7fb;
+    transition: border 0.2s;
+}
+
+.booking-form input[type="date"]:focus,
+.booking-form input[type="number"]:focus,
+.booking-form select:focus {
+    border-color: #4f8cff;
+    outline: none;
+}
+
+.booking-form input[type="submit"] {
+    background: #4f8cff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.booking-form input[type="submit"]:hover {
+    background: #2563eb;
+}
+
+.error-message {
+    color: red;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+.available-table-container {
+    max-width: 350px;
+    margin: 1rem auto;
+    background: #fffbe7;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 1rem 1rem;
+}
+
+.table-title {
+    text-align: center;
+    color: #f4ce14;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.available-tables {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: auto;
+}
+
+.available-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.available-table th, .available-table td {
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    font-size: 1rem;
+    width: 25%;
+}
+
+.available-table th {
+    background: #f4ce14;
+    color: #333;
+    font-weight: 700;
+    border-bottom: 2px solid #e0b800;
+}
+
+.even-row {
+    background: #fffbe7;
+}
+
+.odd-row {
+    background: #fff;
+}
+
+.available-table tr:hover td {
+    background: #ffe066;
+    transition: background 0.2s;
+}
+
+@media screen and (max-width: 600px) {
+    .available-tables {
+        flex-direction: column;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 0rem;
+    }
+    .available-table-container{
+        margin-bottom: 0;
+        padding: 0rem 1rem 1rem 1rem;
+    }
+    .available-table {
+        width: 100%;
+    }
+}
