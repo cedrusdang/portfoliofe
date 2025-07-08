@@ -2,10 +2,11 @@ import "../components/Booking.css";
 import { useEffect, useState } from "react";
 
 // REMOVE THIS IMPORT WHEN NOT TESTING
-import { Server } from '../testing/ServerTest';
+import { Server, GetReservations } from '../testing/ServerTest';
+
 // REMOVE THIS IMPORT WHEN NOT TESTING
 
-function AvailableTable({ date }) {
+function AvailableTable({ date, tableUpdate }) {
     const times = [
         "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00",
         "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"
@@ -21,6 +22,22 @@ function AvailableTable({ date }) {
     //        .then(data => setBookedTimes(data.bookedTimes || []))
     //        .catch(() => setBookedTimes([]));
     //}, [date]);
+    
+    // TESTING PURPOSES ONLY, REMOVE WHEN NOT TESTING
+    // Simulate fetching booked times for testing purposes
+    useEffect(() => {
+        async function fetchBookedTimes() {
+            const response = await GetReservations({ date });
+            if (response.status === 200 && Array.isArray(response.data)) {
+                // Booked times are expected to be in the format of an array of objects with a 'time' property
+                setBookedTimes(response.data.map(r => r.time));
+            } else {
+                setBookedTimes([]);
+            }
+        }
+        fetchBookedTimes();
+    }, [date, tableUpdate]);
+    // REMOVE THIS USEEFFECT WHEN NOT TESTING
 
     const mid = Math.ceil(times.length / 2);
     const firstHalf = times.slice(0, mid);
@@ -65,7 +82,7 @@ function AvailableTable({ date }) {
 
 // This component allows users to make a reservation by selecting a date, time, number of guests, and occasion.
 function Booking() {
-    const [date, setDate] = useState(new Date().toISOString().split("T")[0]);
+    const [tableUpdate, setTableUpdate] = useState(false);
     const [time, setTime] = useState("17:00");
     const [guests, setGuests] = useState(1);
     const [occasion, setOccasion] = useState("Birthday");
@@ -79,6 +96,12 @@ function Booking() {
     });
     const [errorDate, setErrorDate] = useState(false);
     const [errorTime, setErrorTime] = useState(false);
+
+    // Intialize the date using the current date in ISO format (YYYY-MM-DD)
+    const today = new Date();
+    today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+    const todayISO = today.toISOString().split("T")[0];
+    const [date, setDate] = useState(todayISO);
 
     // Check if the date is today or in the past
     const checkDate = (selectedDate) => {
@@ -128,8 +151,20 @@ function Booking() {
         let response = await Server(data);
         if (response.status === 200) {
             console.log("Reservation made successfully!");
-            setMessage("Reservation made successfully!");
+            setMessage(
+                `Reservation made successfully!
+
+                Booking Information
+                ID: ${response.data.id}
+
+                Date: ${response.data.date}
+                Time: ${response.data.time}
+                Guests: ${response.data.guests}
+                Occasion: ${response.data.occasion}
+                `
+            );
             setMessageColor("green");
+            setTableUpdate(false);// Reset table update state
         } else if (response.status === 409) {
             setMessage("This slot is already booked.");
             console.error(response.message);
@@ -181,6 +216,9 @@ function Booking() {
     };
     // Handle form submission
     const handleSubmit = (e) => {
+        // reset the table update state
+        setTableUpdate(true);
+        // Prevent the default form submission behavior
         e.preventDefault();
         if (checkDate(date)) {
             console.log("You cannot book a reservation in the past.");
@@ -211,7 +249,7 @@ function Booking() {
 
     return (
         <div>
-            <AvailableTable date={date} />
+            <AvailableTable date={date} tableUpdate={tableUpdate} />
             <div className="booking-page">
                 <div className="booking-form-container">
                     <form className="booking-form" style={{ display: "grid", maxWidth: "200px", gap: "20px" }}>
@@ -252,7 +290,7 @@ function Booking() {
                     <span className="error-message">
                         {errorDate ? <p>Please select a date that is in the future.</p> : ""}
                         {errorTime ? <p>Please select a time that is in the future.</p> : ""}
-                        {message !== null ? <p style={{ color: messageColor }}>{message}</p> : ""}
+                        {message !== null ? <p style={{ color: messageColor, whiteSpace: "pre-line" }}>{message}</p> : ""}
                     </span>
                 </div>
             </div>
