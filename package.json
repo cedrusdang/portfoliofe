@@ -13,6 +13,10 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "jest": "^27.5.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -39,11 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "gh-pages": "^6.3.0",
-    "jest": "^27.5.1"
-  },
-  "homepage": "https://cedrusdang.github.io/portfoliofe",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+  "homepage": "https://cedrusdang.github.io/portfoliofe"
 }

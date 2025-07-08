@@ -6,7 +6,7 @@ export default function Testimonials() {
             <div className="testimonials-title">Testimonials</div>
             <div className="testimonials-list">
                 <div className="testimonial-card">
-                    <img src="/imgs/customerA.png" alt="Customer 1" className="testimonial-avatar" />
+                    <img src={`${process.env.PUBLIC_URL}/imgs/customerA.png`} alt="Customer 1" className="testimonial-avatar" />
                     <div className="testimonial-name">Sarah L.</div>
                     <div className="testimonial-role">Diner</div>
                     <div className="testimonial-text">
@@ -14,7 +14,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="testimonial-card">
-                    <img src="/imgs/customerB.png" alt="Customer 2" className="testimonial-avatar" />
+                    <img src={`${process.env.PUBLIC_URL}/imgs/customerB.png`} alt="Customer 2" className="testimonial-avatar" />
                     <div className="testimonial-name">John D.</div>
                     <div className="testimonial-role">Diner</div>
                     <div className="testimonial-text">
@@ -22,7 +22,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="testimonial-card">
-                    <img src="/imgs/customerC.png" alt="Customer 3" className="testimonial-avatar" />
+                    <img src={`${process.env.PUBLIC_URL}/imgs/customerC.png`} alt="Customer 3" className="testimonial-avatar" />
                     <div className="testimonial-name">Emily R.</div>
                     <div className="testimonial-role">Diner</div>
                     <div className="testimonial-text">
@@ -30,7 +30,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="testimonial-card">
-                    <img src="/imgs/customerD.png" alt="Customer 4" className="testimonial-avatar" />
+                    <img src={`${process.env.PUBLIC_URL}/imgs/customerD.png`} alt="Customer 4" className="testimonial-avatar" />
                     <div className="testimonial-name">Michael S.</div>
                     <div className="testimonial-role">Diner</div>
                     <div className="testimonial-text">

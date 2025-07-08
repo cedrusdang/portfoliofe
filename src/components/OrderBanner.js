@@ -10,7 +10,7 @@ export default function OrderBanner() {
                     <div className='Banner-location'>Little Lemon</div>
                     <div className='Banner-description'>Choose your favorite dishes and enjoy Little Lemon delivered to your door!</div>
                 </div>
-                <img src='/imgs/lemon dessert.jpg' className='Banner-image' alt="Little Lemon Food" loading="lazy"/>
+                <img src={`${process.env.PUBLIC_URL}/imgs/lemon dessert.jpg`} className='Banner-image' alt="Little Lemon Food" loading="lazy"/>
             </div>
         </div>
     );

@@ -10,7 +10,7 @@ export default function Banner() {
                     <div className='Banner-description'>We are a family-owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</div>
                     <button onClick={() => window.location.href='/reservations'} className='Reserve-button'>Reserve a Table</button>
                 </div>
-                <img src='/imgs/restaurantfood.jpg' className='Banner-image' alt="Little Lemon" loading="lazy"/>
+                <img src={`${process.env.PUBLIC_URL}/imgs/restaurantfood.jpg`} className='Banner-image' alt="Little Lemon" loading="lazy"/>
             </div>
         </div>
     );

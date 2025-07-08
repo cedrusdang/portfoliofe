@@ -14,7 +14,7 @@ export default function HomeAbout() {
                         </div>
                     </div>
                     <img
-                        src="/imgs/stacked.png"
+                        src={`${process.env.PUBLIC_URL}/imgs/stacked.png`}
                         alt="Restaurant"
                         className="about-img-inline"
                         loading="lazy"

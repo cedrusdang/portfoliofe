@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-container">
                 <div className="footer-logo">
-                <img src='../../imgs/Logo.svg' alt="Little Lemon Logo" />
+                <img src={`${process.env.PUBLIC_URL}/imgs/Logo.svg`} alt="Little Lemon Logo" />
                 </div>
                 <div className="footer-doormat">
                 <h4>Doormat Navigation</h4>
