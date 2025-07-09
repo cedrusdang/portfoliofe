@@ -165,30 +165,30 @@ function Booking() {
 
     // This function sends the reservation data to the server and handles the response.
     // Note: Replace "https://example.com/api/reservations" with your actual API endpoint.
-    const ReserveTable = async (data) => {
-        try {
-            const response = await fetch("https://example.com/api/reservations", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
-            });
-            if (response.ok) {
-                console.log("Reservation made successfully!");
-                setDate(new Date().toISOString().split("T")[0]);
-                setTime(new Date().toISOString().split("T")[1].substring(0, 5));
-                setGuests(1);
-                setOccasion("Birthday");
-            } else {
-                console.error("Error making reservation:", response.statusText);
-                setMessage("Error making reservation. Please try again.");
-            }
-        } catch (error) {
-            console.error("Network or server error:", error);
-            setMessage("Network or server error. Please try again.");
-        }
-    };
+    // const ReserveTable = async (data) => {
+    //     try {
+    //         const response = await fetch("https://example.com/api/reservations", {
+    //             method: "POST",
+    //             headers: {
+    //                 "Content-Type": "application/json",
+    //             },
+    //             body: JSON.stringify(data),
+    //         });
+    //         if (response.ok) {
+    //             console.log("Reservation made successfully!");
+    //             setDate(new Date().toISOString().split("T")[0]);
+    //             setTime(new Date().toISOString().split("T")[1].substring(0, 5));
+    //             setGuests(1);
+    //             setOccasion("Birthday");
+    //         } else {
+    //             console.error("Error making reservation:", response.statusText);
+    //             setMessage("Error making reservation. Please try again.");
+    //         }
+    //     } catch (error) {
+    //         console.error("Network or server error:", error);
+    //         setMessage("Network or server error. Please try again.");
+    //     }
+    // };
     // Handle form submission
     const handleSubmit = (e) => {
         // Prevent the default form submission behavior
