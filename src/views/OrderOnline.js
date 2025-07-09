@@ -14,7 +14,7 @@ export default function OrderOnline() {
       name: "Greek Salad",
       price: 12.99,
       description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-      image: "./imgs/greek salad.jpg",
+      image: `${process.env.PUBLIC_URL}/imgs/greek salad.jpg`,
       category: "Salads"
     },
     {
@@ -22,7 +22,7 @@ export default function OrderOnline() {
       name: "Bruschetta",
       price: 5.99,
       description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.",
-      image: "./imgs/bruchetta.svg",
+      image: `${process.env.PUBLIC_URL}/imgs/bruchetta.svg`,
       category: "Appetizers"
     },
     {
@@ -30,7 +30,7 @@ export default function OrderOnline() {
       name: "Lemon Dessert",
       price: 5.00,
       description: "This comes straight from grandma's recipe book, every bite will remind you of the best moments in your life.",
-      image: "./imgs/lemon dessert.jpg",
+      image: `${process.env.PUBLIC_URL}/imgs/lemon dessert.jpg`,
       category: "Desserts"
     },
     {
@@ -38,7 +38,7 @@ export default function OrderOnline() {
       name: "Mediterranean Grilled Chicken",
       price: 18.99,
       description: "Tender grilled chicken with Mediterranean herbs and spices, served with fresh vegetables.",
-      image: "./imgs/Mediterranean grilled chicken salad.jpeg",
+      image: `${process.env.PUBLIC_URL}/imgs/Mediterranean grilled chicken salad.jpeg`,
       category: "Main Course"
     },
     {
@@ -46,7 +46,7 @@ export default function OrderOnline() {
       name: "Grilled Vegetables with Beans",
       price: 14.99,
       description: "Fresh grilled vegetables with cannellini beans and vegan pesto sauce.",
-      image: "./imgs/Grilled-vegetables-with-cannellini-beans-vegan-pesto.jpg",
+      image: `${process.env.PUBLIC_URL}/imgs/Grilled-vegetables-with-cannellini-beans-vegan-pesto.jpg`,
       category: "Vegetarian"
     },
     {
@@ -54,7 +54,7 @@ export default function OrderOnline() {
       name: "Roasted Salmon",
       price: 22.99,
       description: "Fresh salmon roasted with cherry tomatoes and green beans.",
-      image: "./imgs/sheet-pan-roasted-salmon-vegetables.jpg",
+      image: `${process.env.PUBLIC_URL}/imgs/sheet-pan-roasted-salmon-vegetables.jpg`,
       category: "Seafood"
     },
     {
@@ -62,7 +62,7 @@ export default function OrderOnline() {
       name: "Roasted Cod",
       price: 19.99,
       description: "Tender roasted cod with cherry tomatoes and green beans, perfectly seasoned.",
-      image: "./imgs/roasted cod or halibut with cherry tomatoes and green beans.jpeg",
+      image: `${process.env.PUBLIC_URL}/imgs/roasted cod or halibut with cherry tomatoes and green beans.jpeg`,
       category: "Seafood"
     },
     {
@@ -70,7 +70,7 @@ export default function OrderOnline() {
       name: "Lentil Stew",
       price: 13.99,
       description: "Savory red lentil and vegetable stew served over mashed potatoes.",
-      image: "./imgs/savory red lentil and vegetable stew served over mashed potatoes.jpg",
+      image: `${process.env.PUBLIC_URL}/imgs/savory red lentil and vegetable stew served over mashed potatoes.jpg`,
       category: "Vegetarian"
     },
     {
@@ -78,7 +78,7 @@ export default function OrderOnline() {
       name: "Mediterranean Chicken Square",
       price: 16.99,
       description: "Mediterranean-style chicken with herbs and spices, perfectly grilled.",
-      image: "./imgs/mediterranean-chicken-square.avif",
+      image: `${process.env.PUBLIC_URL}/imgs/mediterranean-chicken-square.avif`,
       category: "Main Course"
     }
   ];

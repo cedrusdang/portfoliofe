@@ -239,7 +239,7 @@
 
 @media(min-width: 1442px) {
     .testimonial-card {
-        width: 10rem !important;
+        width: 12rem !important;
     }
 }
 @media (max-width: 1441px) {
