@@ -33,7 +33,7 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter basename="/portfoliofe">
+    <BrowserRouter basename="/littlelemon">
       <AppContent />
     </BrowserRouter>
   );
