@@ -60,24 +60,22 @@ const dishes = [
 export default function Menu() {
   const navigate = useNavigate();
   return (
-    <div>
-      <div className="Content-menu">
-      <div className="Content-menu">
-        <h1>Menu</h1>
-        <p>Explore our delicious menu options!</p>
-        <div className="menu-grid">
-          {dishes.map((dish, idx) => (
-            <div className="card" key={idx}>
-              <img
-                src={dish.img}
-                alt={dish.title}
-                className="card-image"
-                loading="lazy"
-              />
-              <div className="card-header">
-                <div className="card-title">{dish.title}</div>
-                <div className="card-price">{dish.price}</div>
-              </div>
+    <div className="Content-menu">
+      <h1>Menu</h1>
+      <p>Explore our delicious menu options!</p>
+      <div className="menu-grid">
+        {dishes.map((dish, idx) => (
+          <div className="card" key={idx}>
+            <img
+              src={dish.img}
+              alt={dish.title}
+              className="card-image"
+              loading="lazy"
+            />
+            <div className="card-header">
+              <div className="card-title">{dish.title}</div>
+              <div className="card-price">{dish.price}</div>
+            </div>
             <div className="card-description">{dish.desc}</div>
             <button
               className="order-button"
@@ -88,7 +86,6 @@ export default function Menu() {
             </button>
           </div>
         ))}
-        </div>
       </div>
     </div>
   );
