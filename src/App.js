@@ -33,7 +33,7 @@ function AppContent() {
 
 function App() {
   return (
-    <BrowserRouter basename="/littlelemon">
+    <BrowserRouter>
       <AppContent />
     </BrowserRouter>
   );
