@@ -28,10 +28,34 @@ const Footer = () => {
                 <p>info@littlelemon.com</p>
                 </div>
                 <div className="footer-social">
-                <h4>Social Media Links</h4>
-                <p>Facebook: <a href="https://www.facebook.com/littlelemon" target="_blank" rel="noopener noreferrer">littlelemon</a></p>
-                <p>Instagram: <a href="https://www.instagram.com/littlelemon" target="_blank" rel="noopener noreferrer">@littlelemon</a></p>
-                <p>Twitter: <a href="https://www.twitter.com/littlelemon" target="_blank" rel="noopener noreferrer">@littlelemon</a></p>
+                  <h4>Social Media Links</h4>
+                  <p>Facebook:
+                    <a href="https://www.facebook.com/littlelemon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'blue' }}
+                    >
+                      @littlelemon
+                    </a>
+                  </p>
+                  <p>Instagram:
+                    <a href="https://www.instagram.com/littlelemon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'blue' }}
+                    >
+                      @littlelemon
+                    </a>
+                  </p>
+                  <p>Twitter:
+                    <a href="https://www.twitter.com/littlelemon"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none', color: 'blue' }}
+                    >
+                      @littlelemon
+                    </a>
+                  </p>
                 </div>
             </div>
         </div>

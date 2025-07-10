@@ -1,10 +1,15 @@
 import './Nav.css';
 import { Link } from 'react-router-dom';
 
-export default function navigator(){
+export default function Navigator(){
     return(
         <div className="App-header">
-            <img src={`${process.env.PUBLIC_URL}/imgs/Logo.svg`} className="App-logo" alt="logo" loading="lazy" />
+            <Link to="/">
+                <img className="App-logo"
+                    alt="logo"
+                    loading="lazy"
+                    src={`${process.env.PUBLIC_URL}/imgs/Logo.svg`} />
+            </Link>
             <nav className='App-menu'>
             <ul>
                 <li><Link className="option" to="/">Home</Link></li>
